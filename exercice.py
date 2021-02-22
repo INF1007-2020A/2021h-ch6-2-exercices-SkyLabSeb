@@ -7,7 +7,7 @@ from matplotlib.colors import cnames
 def list_to_dict(some_list: list) -> dict:
     # TODO: Transformer la liste en dictionnaire, les éléments de la liste deviennent les clés et leur index deviennent les valeurs
 
-    return {}
+    return {valeur: index for index, valeur in enumerate(some_list)}
 
 
 def color_name_to_hex(colors: list) -> list:
@@ -18,8 +18,15 @@ def color_name_to_hex(colors: list) -> list:
 
 def create_list() -> list:
     # TODO: Créer une liste des 10 000 premiers entiers positif, sauf pour les entiers de 15 à 350
+    liste_entier, valeur = [], 0
+    while valeur <= 10000:
+        if valeur < 15 or valeur > 350:
+            liste_entier.append(valeur)
+        valeur += 1
 
-    return []
+    return liste_entier
+
+    # return [valeur for valeur in range(0, 15, 1)]
 
 
 def compute_mse(model_dict: dict) -> dict:
