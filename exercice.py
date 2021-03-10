@@ -29,6 +29,17 @@ def create_list() -> list:
 
 def compute_mse(model_dict: dict) -> dict:
     # TODO: Calculer l'erreur quadratique moyen pour chaque modèle. Retourner un dictionnaire contenant les MSE.
+    mse = dict()
+    for key, value in model_dict.items():
+        print(key)
+        print(value)
+        for n in value:
+            print(n)
+        #     x = (n[0] - n[1])**2
+        #     mse[key] = (1/n) * x
+
+
+
 
     return {}
 
@@ -43,7 +54,7 @@ def main() -> None:
     print(f"La liste des 10000 entiers est: {create_list()}")
 
     model_dict = {"LR": [(90, 92), (96, 100), (20, 25), (21, -2), (3, -20)],
-                  "DNN": [(100, 101), (50, 50), (1,2), (-10, -12), (-1, 7)],
+                  "DNN": [(100, 101), (50, 50), (1, 2), (-10, -12), (-1, 7)],
                   "RF": [(10, 19), (56, 70), (1, 9), (-100, -12), (-11, 7)]}
     print(f"Le mse des différents modèles est: {compute_mse(model_dict)}")
 
